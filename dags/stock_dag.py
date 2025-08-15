@@ -13,8 +13,8 @@ with DAG(
     "stock_data_pipeline",
     default_args=default_args,
     description="Fetch and store stock data",
-    schedule="@daily",
-    start_date=datetime(2025, 8, 15),
+    schedule_interval="@daily",
+    start_date=datetime(2024, 1, 1),
     catchup=False,
 ) as dag:
 

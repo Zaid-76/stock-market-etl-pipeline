@@ -8,14 +8,7 @@ services:
     ports:
       - "${DB_PORT}:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DB_USER}"]
-      interval: 10s
-      timeout: 5s
-      retries: 3
-
 
   airflow-init:
     image: apache/airflow:2.9.0
@@ -46,10 +39,6 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./scripts:/opt/airflow/scripts
-      - ./logs:/opt/airflow/logs
     ports:
       - "8080:8080"
     command: bash -c "airflow webserver & airflow scheduler"
-
-volumes:
-  postgres_data:

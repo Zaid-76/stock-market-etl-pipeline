@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS stock_data (
-    stock_symbol VARCHAR(10),
-    date DATE,
-    open NUMERIC,
-    close NUMERIC,
-    PRIMARY KEY (date)
+    symbol TEXT NOT NULL,
+    date   DATE NOT NULL,
+    open   NUMERIC,
+    close  NUMERIC,
+    PRIMARY KEY (symbol, date)
 );
