@@ -38,8 +38,8 @@ stock_pipeline/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/Zaid-76/8byte.ai_assessment.git
-cd 8byte.ai_assessment
+git clone https://github.com/Zaid-76/stock-market-etl-pipeline.git
+cd stock-market-etl-pipeline
 ```
 
 ### 2. Configure Environment Variables
